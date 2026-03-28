@@ -44,20 +44,21 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className={`font-heading italic font-medium text-[22px] tracking-[0.02em] transition-colors duration-300 hidden md:block ${
+            className={`font-heading italic font-medium tracking-[0.02em] transition-colors duration-300 hidden md:block text-[16px] lg:text-[20px] xl:text-[22px] whitespace-nowrap ${
               scrolled ? "text-text-heading" : "text-white"
             }`}
           >
-            Metaphysical & Spiritual Bliss
+            <span className="hidden lg:inline">Metaphysical & Spiritual Bliss</span>
+            <span className="lg:hidden">M&S Bliss</span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative font-body font-normal text-[15px] tracking-[0.04em] uppercase transition-colors duration-300 ${
+                className={`relative font-body font-normal text-[13px] lg:text-[14px] xl:text-[15px] tracking-[0.04em] uppercase transition-colors duration-300 whitespace-nowrap ${
                   scrolled ? "text-text-body" : "text-white/90"
                 } ${
                   isActive(link.href)
