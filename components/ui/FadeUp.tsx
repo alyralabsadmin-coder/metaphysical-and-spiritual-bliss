@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 interface FadeUpProps {
@@ -11,6 +11,16 @@ interface FadeUpProps {
 
 export function FadeUp({ children, className = "", delay = 0 }: FadeUpProps) {
   const { ref, isVisible } = useIntersectionObserver(0.15);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  // On mobile: no animation, everything visible immediately
+  if (isMobile) {
+    return <div className={`h-full ${className}`}>{children}</div>;
+  }
 
   return (
     <div
