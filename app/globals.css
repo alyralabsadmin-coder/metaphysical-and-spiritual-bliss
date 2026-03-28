@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-white: #F0EEF8;
+  --color-bg-blue: #C5DCF0;
+  --color-bg-lilac: #E8D5F0;
+  --color-text-body: #8899AA;
+  --color-text-heading: #5A6B7A;
+  --color-text-light: #B0BFCC;
+  --color-accent-primary: #A8C8E8;
+  --color-accent-hover: #7AADD4;
+  --color-accent-lavender: #D4C5E8;
+  --color-accent-purple: #B8A0CC;
+  --color-gold: #C8B89A;
+  --color-footer-dark: #5A6B7A;
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Global base styles */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-body);
+  background-color: var(--color-bg-white);
+  line-height: 1.8;
+  font-size: 17px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-hover);
+  outline-offset: 3px;
+}
+
+/* Global transition for interactive elements */
+a, button, input, [role="button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll lock for mobile menu */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ========== WHITE SECTION SUBTLE GLOWS ========== */
+.white-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.white-glow::before {
+  content: "";
+  position: absolute;
+  inset: -100px;
+  background:
+    radial-gradient(ellipse 800px 600px at -5% 40%, rgba(140,185,235,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 700px 550px at 105% 15%, rgba(150,190,240,0.45) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 500px at 40% 110%, rgba(130,175,225,0.4) 0%, transparent 65%),
+    radial-gradient(ellipse 500px 400px at 70% 50%, rgba(160,195,235,0.2) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.white-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== COSMIC SECTION ========== */
+.cosmic-bg {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #16213e 25%,
+    #1a1a2e 50%,
+    #0f1729 75%,
+    #1a1a2e 100%
+  );
+  overflow: hidden;
+}
+
+.cosmic-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 30%, rgba(168,200,232,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(140,100,200,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 50%, rgba(100,140,220,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 300px at 70% 20%, rgba(180,160,220,0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cosmic-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 80%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 15% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 25% 45%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 60%, rgba(255,255,255,0.3) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cosmic-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, -40px); }
+}
+
+@keyframes drift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-40px, 30px); }
+}
+
+@keyframes drift3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 50px); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
