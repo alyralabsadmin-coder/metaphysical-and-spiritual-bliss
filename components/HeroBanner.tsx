@@ -49,13 +49,13 @@ export function HeroBanner({
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%)",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%)",
         }}
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-6">
         <h1
-          className="font-heading italic font-medium text-white tracking-[0.04em] leading-[1.15]"
+          className="font-heading italic font-semibold text-white tracking-[0.04em] leading-[1.15]"
           style={{
             fontSize: "clamp(28px, 6vw, 72px)",
             opacity: loaded ? 1 : 0,
