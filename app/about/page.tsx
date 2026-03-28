@@ -9,7 +9,8 @@ import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { TrustSignals } from "@/components/TrustSignals";
 import { SOCIAL } from "@/lib/constants";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer").then(m => ({ default: m.Footer })), { ssr: false });
 import Link from "next/link";
 
 export default function AboutPage() {

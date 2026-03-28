@@ -7,7 +7,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer").then(m => ({ default: m.Footer })), { ssr: false });
 import { CONTACT, SOCIAL } from "@/lib/constants";
 
 const contactCards = [

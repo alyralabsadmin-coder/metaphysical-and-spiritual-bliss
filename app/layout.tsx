@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
-import { Navbar } from "@/components/Navbar";
-import { BackgroundOrbs } from "@/components/BackgroundOrbs";
+import { ClientShell } from "@/components/ClientShell";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -69,9 +68,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body text-text-body bg-bg-white antialiased">
-        <BackgroundOrbs />
-        <Navbar />
-        <main>{children}</main>
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );

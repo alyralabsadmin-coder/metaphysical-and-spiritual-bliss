@@ -44,11 +44,11 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className={`font-heading italic font-medium text-[18px] md:text-[22px] tracking-[0.02em] transition-colors duration-300 ${
+            className={`font-heading italic font-medium text-[22px] tracking-[0.02em] transition-colors duration-300 hidden md:block ${
               scrolled ? "text-text-heading" : "text-white"
             }`}
           >
-            Metaphysical &<br className="md:hidden" /> Spiritual Bliss
+            Metaphysical & Spiritual Bliss
           </Link>
 
           {/* Desktop Links */}

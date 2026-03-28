@@ -6,7 +6,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer").then(m => ({ default: m.Footer })), { ssr: false });
 import { PRODUCT_CARDS } from "@/lib/constants";
 
 export default function StoreSpotlightPage() {

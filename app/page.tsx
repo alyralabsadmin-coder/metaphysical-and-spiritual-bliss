@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { HeroBanner } from "@/components/HeroBanner";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -7,9 +8,10 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { FadeUp } from "@/components/ui/FadeUp";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
-import { Footer } from "@/components/Footer";
 import { FEATURE_CARDS } from "@/lib/constants";
+
+const TestimonialCarousel = dynamic(() => import("@/components/TestimonialCarousel").then(m => ({ default: m.TestimonialCarousel })), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer").then(m => ({ default: m.Footer })), { ssr: false });
 
 export default function HomePage() {
   return (
