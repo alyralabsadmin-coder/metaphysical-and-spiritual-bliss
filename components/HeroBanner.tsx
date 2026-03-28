@@ -57,8 +57,7 @@ export function HeroBanner({
         <h1
           className="font-heading italic font-medium text-white tracking-[0.04em] leading-[1.15]"
           style={{
-            fontSize: "clamp(24px, 5vw, 64px)",
-            WebkitTextStroke: "0.5px rgba(0,0,0,0.4)",
+            fontSize: "clamp(28px, 6vw, 72px)",
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(16px)",
             transition: "opacity 500ms cubic-bezier(0.16,1,0.3,1) 200ms, transform 500ms cubic-bezier(0.16,1,0.3,1) 200ms",
@@ -72,8 +71,7 @@ export function HeroBanner({
           <p
             className="mt-3 md:mt-4 font-body font-normal text-white tracking-wide"
             style={{
-              fontSize: "clamp(14px, 2.5vw, 20px)",
-              WebkitTextStroke: "0.3px rgba(0,0,0,0.3)",
+              fontSize: "clamp(15px, 2.5vw, 22px)",
               opacity: loaded ? 1 : 0,
               transform: loaded ? "translateY(0)" : "translateY(16px)",
               transition: "opacity 500ms cubic-bezier(0.16,1,0.3,1) 400ms, transform 500ms cubic-bezier(0.16,1,0.3,1) 400ms",
