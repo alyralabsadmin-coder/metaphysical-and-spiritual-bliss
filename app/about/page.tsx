@@ -18,7 +18,7 @@ export default function AboutPage() {
       {/* Hero */}
       <HeroBanner
         title="About"
-        imageSrc="/hero-about.png"
+        imageSrc="/hero-about.jpg"
       />
 
       {/* About the Store */}
@@ -26,7 +26,8 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <FadeUp>
             <img
-              src="/about-selenite.png"
+              src="/about-selenite.jpg"
+              loading="lazy"
               alt="Raw selenite crystal"
               className="w-[80%] mx-auto aspect-square rounded-[20px] object-cover"
             />

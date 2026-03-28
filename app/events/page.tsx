@@ -16,7 +16,7 @@ export default function EventsPage() {
       {/* Hero */}
       <HeroBanner
         title="Events"
-        imageSrc="/hero-events.png"
+        imageSrc="/hero-events.jpg"
       />
 
       {/* Everything in one white section */}

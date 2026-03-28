@@ -204,7 +204,7 @@ export const PRODUCT_CARDS = [
     description:
       "Visit the store in person to view all of the unique treasures that can be found at Metaphysical & Spiritual Bliss",
     imageLabel: "Crystal/store image, 320×320 circle",
-    imageSrc: "/store/andsomuchmore.png",
+    imageSrc: "/store/andsomuchmore.jpg",
   },
 ];
 

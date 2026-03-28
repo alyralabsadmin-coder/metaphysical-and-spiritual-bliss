@@ -19,7 +19,7 @@ export default function HomePage() {
         title="Metaphysical & Spiritual Bliss"
         subtitle="Gifts for the mind, body, and soul"
         tall
-        imageSrc="/hero-home-wide.png"
+        imageSrc="/hero-home-wide.jpg"
         imagePosition="center top"
         cta={
           <CTAButton href="/contact" variant="ghost">
@@ -35,6 +35,7 @@ export default function HomePage() {
             <img
               src="/follow-your-bliss.jpg"
               alt="Spiritual sky with sun rays through clouds"
+              loading="lazy"
               className="w-[240px] h-[240px] md:w-[320px] md:h-[320px] mx-auto rounded-full object-cover"
             />
           </FadeUp>
@@ -79,6 +80,7 @@ export default function HomePage() {
                   <img
                     src={card.imageSrc}
                     alt={card.title}
+                    loading="lazy"
                     className="w-[120px] h-[120px] rounded-full object-cover mx-auto mb-5"
                   />
                 ) : (

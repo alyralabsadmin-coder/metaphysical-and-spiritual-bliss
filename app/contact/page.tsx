@@ -42,7 +42,7 @@ export default function ContactPage() {
       {/* Hero */}
       <HeroBanner
         title="Contact"
-        imageSrc="/hero-contact.png"
+        imageSrc="/hero-contact.jpg"
       />
 
       {/* Contact Cards */}

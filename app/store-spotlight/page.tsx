@@ -15,7 +15,7 @@ export default function StoreSpotlightPage() {
       {/* Hero */}
       <HeroBanner
         title="Store Spotlight"
-        imageSrc="/hero-store.png"
+        imageSrc="/hero-store.jpg"
         imagePosition="center 70%"
       />
 
@@ -34,6 +34,7 @@ export default function StoreSpotlightPage() {
                   <img
                     src={card.imageSrc}
                     alt={card.title}
+                    loading="lazy"
                     className="w-[90px] h-[90px] rounded-full object-cover mx-auto mb-4"
                   />
                 ) : (
