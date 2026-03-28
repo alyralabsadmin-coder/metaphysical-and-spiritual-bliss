@@ -40,7 +40,7 @@ export function Navbar() {
             : "bg-transparent md:bg-[rgba(15,18,32,0.3)] md:backdrop-blur-[8px]"
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 flex items-center justify-between h-10 md:h-14">
+        <div className="max-w-[1200px] mx-auto px-2 md:px-10 lg:px-16 xl:px-20 flex items-center justify-start md:justify-between h-10 md:h-14">
           {/* Logo */}
           <Link
             href="/"
