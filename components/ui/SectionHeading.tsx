@@ -11,7 +11,8 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <Tag
-      className={`font-heading italic font-normal text-[30px] md:text-[34px] lg:text-[38px] tracking-[0.03em] leading-[1.2] text-text-heading ${className}`}
+      className={`font-heading italic font-normal tracking-[0.03em] leading-[1.2] text-text-heading ${className}`}
+      style={{ fontSize: "clamp(24px, 4vw, 38px)" }}
     >
       {children}
     </Tag>

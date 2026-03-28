@@ -49,7 +49,7 @@ export function TrustSignals() {
   const { ref, isVisible } = useIntersectionObserver(0.15);
 
   return (
-    <div ref={ref} className="grid grid-cols-3 gap-8">
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
       {TRUST_SIGNALS.map((item, i) => (
         <TrustItem key={i} {...item} isVisible={isVisible} />
       ))}

@@ -12,7 +12,7 @@ function ReviewText({ text }: { text: string }) {
   const isLong = text.length > CHAR_LIMIT;
 
   return (
-    <p className="font-body italic text-text-heading text-[15px] leading-[1.7]">
+    <p className="font-body italic text-text-heading text-[14px] md:text-[15px] leading-[1.7]">
       &ldquo;
       {isLong && !expanded ? text.slice(0, CHAR_LIMIT).trimEnd() + "..." : text}
       &rdquo;
@@ -22,7 +22,7 @@ function ReviewText({ text }: { text: string }) {
             e.stopPropagation();
             setExpanded(!expanded);
           }}
-          className="ml-2 text-accent-primary hover:text-accent-hover text-[13px] font-body font-medium not-italic"
+          className="ml-2 text-accent-primary hover:text-accent-hover text-[13px] font-body font-medium not-italic min-h-[44px] inline-flex items-center"
         >
           {expanded ? "Show less" : "Read more"}
         </button>
@@ -33,7 +33,7 @@ function ReviewText({ text }: { text: string }) {
 
 function ReviewCard({ review }: { review: (typeof TESTIMONIALS)[number] }) {
   return (
-    <GlassCard light hover={false} className="text-center h-full flex flex-col justify-between !shadow-none">
+    <GlassCard light hover={false} className="text-center flex flex-col justify-between !shadow-none">
       <div>
         <div className="flex justify-center gap-1 mb-3">
           {[...Array(5)].map((_, i) => (
@@ -59,7 +59,6 @@ function DesktopTicker() {
   const tickerRef = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
 
-  // Duplicate reviews for seamless loop
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
 
   useEffect(() => {
@@ -68,12 +67,11 @@ function DesktopTicker() {
 
     let animId: number;
     let pos = 0;
-    const speed = 0.5; // px per frame
+    const speed = 0.5;
 
     const step = () => {
       if (!paused) {
         pos += speed;
-        // Reset when first set scrolls out
         const halfWidth = ticker.scrollWidth / 2;
         if (pos >= halfWidth) pos = 0;
         ticker.style.transform = `translateX(-${pos}px)`;
@@ -93,11 +91,11 @@ function DesktopTicker() {
     >
       <div
         ref={tickerRef}
-        className="flex gap-8 will-change-transform"
-        style={{ width: "max-content" }}
+        className="flex gap-6 md:gap-8"
+        style={{ width: "max-content", willChange: "transform" }}
       >
         {doubled.map((review, i) => (
-          <div key={i} className="w-[380px] flex-shrink-0">
+          <div key={i} className="w-[320px] md:w-[380px] flex-shrink-0">
             <ReviewCard review={review} />
           </div>
         ))}
@@ -115,7 +113,6 @@ function MobileCarousel() {
   const next = () =>
     setCurrent((c) => (c + 1) % TESTIMONIALS.length);
 
-  // Swipe support
   const touchStart = useRef(0);
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStart.current = e.touches[0].clientX;
@@ -134,41 +131,45 @@ function MobileCarousel() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Arrows */}
+        {/* Arrows — 44px min tap target */}
         <button
           onClick={prev}
           aria-label="Previous review"
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 text-accent-primary hover:text-accent-hover transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 text-accent-primary hover:text-accent-hover transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
         >
-          <ChevronLeft className="w-8 h-8" />
+          <ChevronLeft className="w-7 h-7" />
         </button>
         <button
           onClick={next}
           aria-label="Next review"
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 text-accent-primary hover:text-accent-hover transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 text-accent-primary hover:text-accent-hover transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
         >
-          <ChevronRight className="w-8 h-8" />
+          <ChevronRight className="w-7 h-7" />
         </button>
 
         {/* Card */}
-        <div className="px-8">
+        <div className="px-10">
           <ReviewCard review={TESTIMONIALS[current]} />
         </div>
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center gap-1.5 mt-5">
+      {/* Dots — with adequate tap area */}
+      <div className="flex justify-center gap-3 mt-5">
         {TESTIMONIALS.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
             aria-label={`Go to review ${i + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              i === current
-                ? "bg-accent-primary scale-125"
-                : "bg-accent-primary/25 hover:bg-accent-primary/50"
-            }`}
-          />
+            className="min-h-[44px] min-w-[28px] flex items-center justify-center"
+          >
+            <span
+              className={`block w-2 h-2 rounded-full transition-all duration-300 ${
+                i === current
+                  ? "bg-accent-primary scale-125"
+                  : "bg-accent-primary/25"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

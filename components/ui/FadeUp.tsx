@@ -18,8 +18,9 @@ export function FadeUp({ children, className = "", delay = 0 }: FadeUpProps) {
       className={`h-full ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 600ms cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 600ms cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
+        transform: isVisible ? "translateY(0)" : "translateY(16px)",
+        transition: `opacity 500ms cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 500ms cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
+        willChange: "transform, opacity",
       }}
     >
       {children}

@@ -56,25 +56,25 @@ export function Footer({ preContent }: FooterProps) {
         {preContent}
 
         {/* Newsletter */}
-        <div className="py-14 md:py-16">
-          <div className="max-w-[720px] mx-auto px-6 md:px-10 text-center">
-            <h2 className="font-heading italic font-medium text-[28px] tracking-[0.03em] leading-[1.2] text-white">
+        <div className="py-10 md:py-16">
+          <div className="max-w-[720px] mx-auto px-4 md:px-10 text-center">
+            <h2 className="font-heading italic font-medium tracking-[0.03em] leading-[1.2] text-white" style={{ fontSize: "clamp(22px, 4vw, 28px)" }}>
               Stay in the Light
             </h2>
             <p className="mt-3 font-body font-normal text-[15px] text-white/60">
               Receive updates on events, new arrivals, and spiritual insights.
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-0 max-w-md mx-auto">
+            <div className="mt-5 flex flex-col sm:flex-row gap-2 sm:gap-0 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white/8 backdrop-blur-[16px] border border-white/15 text-white placeholder:text-white/30 font-body text-[15px] px-6 py-3.5 rounded-full sm:rounded-l-full sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-accent-hover"
+                className="flex-1 bg-white/8 backdrop-blur-[16px] border border-white/15 text-white placeholder:text-white/30 font-body text-[14px] md:text-[15px] px-5 py-3 md:py-3.5 rounded-full sm:rounded-l-full sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-accent-hover min-h-[44px]"
               />
               <button
                 type="button"
-                className="bg-accent-primary text-white font-body font-medium text-sm tracking-[0.06em] uppercase px-8 py-3.5 rounded-full sm:rounded-l-none sm:rounded-r-full hover:bg-accent-hover transition-all duration-300 shadow-[0_2px_16px_rgba(168,200,232,0.3)] hover:shadow-[0_4px_24px_rgba(168,200,232,0.4)]"
+                className="bg-accent-primary text-white font-body font-medium text-[13px] tracking-[0.06em] uppercase px-6 md:px-8 py-3 md:py-3.5 rounded-full sm:rounded-l-none sm:rounded-r-full hover:bg-accent-hover transition-all duration-300 shadow-[0_2px_16px_rgba(168,200,232,0.3)] hover:shadow-[0_4px_24px_rgba(168,200,232,0.4)] min-h-[44px]"
               >
                 Subscribe
               </button>
@@ -130,13 +130,13 @@ export function Footer({ preContent }: FooterProps) {
             </div>
 
             {/* Social icons */}
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center gap-2 mt-8">
               <a
                 href={SOCIAL.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-white/40 hover:text-accent-primary hover:drop-shadow-[0_0_8px_rgba(168,200,232,0.4)] transition-all duration-300"
+                className="text-white/40 hover:text-accent-primary hover:drop-shadow-[0_0_8px_rgba(168,200,232,0.4)] transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <FacebookIcon />
               </a>
@@ -145,7 +145,7 @@ export function Footer({ preContent }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-white/40 hover:text-accent-primary hover:drop-shadow-[0_0_8px_rgba(168,200,232,0.4)] transition-all duration-300"
+                className="text-white/40 hover:text-accent-primary hover:drop-shadow-[0_0_8px_rgba(168,200,232,0.4)] transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <InstagramIcon />
               </a>

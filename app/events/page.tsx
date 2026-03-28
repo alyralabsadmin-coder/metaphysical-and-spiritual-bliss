@@ -48,7 +48,7 @@ export default function EventsPage() {
             We Offer the Following Classes and/or Events
           </SectionHeading>
         </FadeUp>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {CLASS_CARDS.map((card, i) => (
             <FadeUp key={card.title} delay={i * 80}>
               <GlassCard className="text-center">

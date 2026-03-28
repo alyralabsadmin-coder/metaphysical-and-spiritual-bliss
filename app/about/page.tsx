@@ -23,7 +23,7 @@ export default function AboutPage() {
 
       {/* About the Store */}
       <SectionWrapper bg="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
           <FadeUp>
             <img
               src="/about-selenite.jpg"
@@ -56,13 +56,13 @@ export default function AboutPage() {
               that you won&apos;t see online! Stop in any time to ask about the
               unique treasures at Metaphysical & Spiritual Bliss.
             </p>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-1 mt-6">
               <a
                 href={SOCIAL.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-text-body hover:text-accent-primary transition-colors"
+                className="text-text-body hover:text-accent-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-text-body hover:text-accent-primary transition-colors"
+                className="text-text-body hover:text-accent-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
         {/* Meet Cheryl — same white section, no cutoff */}
         <FadeUp className="mt-16 lg:mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="md:order-1">
               <SectionHeading className="mb-6">
                 Meet Cheryl

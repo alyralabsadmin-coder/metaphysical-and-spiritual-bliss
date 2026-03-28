@@ -30,13 +30,13 @@ export default function HomePage() {
 
       {/* Follow Your Bliss + Testimonials — white */}
       <SectionWrapper bg="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
           <FadeUp>
             <img
               src="/follow-your-bliss.jpg"
               alt="Spiritual sky with sun rays through clouds"
               loading="lazy"
-              className="w-[240px] h-[240px] md:w-[320px] md:h-[320px] mx-auto rounded-full object-cover"
+              className="w-[180px] h-[180px] md:w-[320px] md:h-[320px] mx-auto rounded-full object-cover"
             />
           </FadeUp>
           <FadeUp delay={80}>

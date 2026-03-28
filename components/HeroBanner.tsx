@@ -9,7 +9,6 @@ interface HeroBannerProps {
   tall?: boolean;
   imageLabel?: string;
   imageSrc?: string;
-  /** CSS object-position value, e.g. "center 70%" — controls crop focal point */
   imagePosition?: string;
 }
 
@@ -34,7 +33,6 @@ export function HeroBanner({
         tall ? "h-[35vh] md:h-[55vh]" : "h-[20vh] md:h-[35vh]"
       }`}
     >
-      {/* Background */}
       {imageSrc ? (
         <img
           src={imageSrc}
@@ -48,7 +46,6 @@ export function HeroBanner({
         </div>
       )}
 
-      {/* Light overlay for text readability */}
       <div
         className="absolute inset-0"
         style={{
@@ -56,15 +53,16 @@ export function HeroBanner({
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-6">
         <h1
-          className="font-heading italic font-medium text-white tracking-[0.04em] leading-[1.15] text-[32px] md:text-[42px] lg:text-[64px]"
+          className="font-heading italic font-medium text-white tracking-[0.04em] leading-[1.15]"
           style={{
+            fontSize: "clamp(24px, 5vw, 64px)",
             WebkitTextStroke: "0.5px rgba(0,0,0,0.4)",
             opacity: loaded ? 1 : 0,
-            transform: loaded ? "translateY(0)" : "translateY(24px)",
-            transition: "opacity 600ms cubic-bezier(0.16,1,0.3,1) 200ms, transform 600ms cubic-bezier(0.16,1,0.3,1) 200ms",
+            transform: loaded ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 500ms cubic-bezier(0.16,1,0.3,1) 200ms, transform 500ms cubic-bezier(0.16,1,0.3,1) 200ms",
+            willChange: "transform, opacity",
           }}
         >
           {title}
@@ -72,12 +70,14 @@ export function HeroBanner({
 
         {subtitle && (
           <p
-            className="mt-4 font-body font-normal text-white text-lg md:text-xl tracking-wide"
+            className="mt-3 md:mt-4 font-body font-normal text-white tracking-wide"
             style={{
+              fontSize: "clamp(14px, 2.5vw, 20px)",
               WebkitTextStroke: "0.3px rgba(0,0,0,0.3)",
               opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateY(0)" : "translateY(24px)",
-              transition: "opacity 600ms cubic-bezier(0.16,1,0.3,1) 400ms, transform 600ms cubic-bezier(0.16,1,0.3,1) 400ms",
+              transform: loaded ? "translateY(0)" : "translateY(16px)",
+              transition: "opacity 500ms cubic-bezier(0.16,1,0.3,1) 400ms, transform 500ms cubic-bezier(0.16,1,0.3,1) 400ms",
+              willChange: "transform, opacity",
             }}
           >
             {subtitle}
@@ -86,11 +86,12 @@ export function HeroBanner({
 
         {cta && (
           <div
-            className="mt-8"
+            className="mt-5 md:mt-8"
             style={{
               opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateY(0)" : "translateY(24px)",
-              transition: "opacity 600ms cubic-bezier(0.16,1,0.3,1) 600ms, transform 600ms cubic-bezier(0.16,1,0.3,1) 600ms",
+              transform: loaded ? "translateY(0)" : "translateY(16px)",
+              transition: "opacity 500ms cubic-bezier(0.16,1,0.3,1) 600ms, transform 500ms cubic-bezier(0.16,1,0.3,1) 600ms",
+              willChange: "transform, opacity",
             }}
           >
             {cta}

@@ -82,7 +82,7 @@ export function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >

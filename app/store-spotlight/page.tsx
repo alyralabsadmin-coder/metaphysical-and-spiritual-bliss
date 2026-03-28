@@ -26,7 +26,7 @@ export default function StoreSpotlightPage() {
             Our Collection
           </SectionHeading>
         </FadeUp>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
           {PRODUCT_CARDS.map((card, i) => (
             <FadeUp key={card.title} delay={(i % 6) * 80}>
               <GlassCard className="text-center">

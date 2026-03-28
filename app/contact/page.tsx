@@ -47,7 +47,7 @@ export default function ContactPage() {
 
       {/* Contact Cards */}
       <SectionWrapper bg="white" divider={false}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {contactCards.map((card, i) => (
             <FadeUp key={card.label} delay={i * 80}>
               <GlassCard light className="text-center">
