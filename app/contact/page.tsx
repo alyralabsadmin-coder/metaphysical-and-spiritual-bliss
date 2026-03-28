@@ -3,7 +3,9 @@
 import { Phone, MapPin, Share2 } from "lucide-react";
 import { HeroBanner } from "@/components/HeroBanner";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { CTAButton } from "@/components/ui/CTAButton";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { Footer } from "@/components/Footer";
 import { CONTACT, SOCIAL } from "@/lib/constants";
@@ -86,6 +88,23 @@ export default function ContactPage() {
             </FadeUp>
           ))}
         </div>
+
+        {/* Bookings notice */}
+        <FadeUp className="mt-12 text-center max-w-[600px] mx-auto">
+          <SectionHeading className="text-center mb-4">
+            How to Book
+          </SectionHeading>
+          <p className="text-text-body leading-[1.8] text-[16px]">
+            All bookings, event registrations, and reading appointments are handled
+            directly by phone or text. Give us a call or send a text anytime — we&apos;d
+            love to hear from you!
+          </p>
+          <div className="mt-5">
+            <CTAButton href="tel:9084719698" variant="primary">
+              Call or Text (908) 471-9698
+            </CTAButton>
+          </div>
+        </FadeUp>
 
         {/* Google Map */}
         <FadeUp className="mt-12">

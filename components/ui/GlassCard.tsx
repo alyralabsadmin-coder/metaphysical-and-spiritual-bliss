@@ -23,9 +23,10 @@ export function GlassCard({
         ${bg}
         backdrop-blur-[16px] backdrop-saturate-[1.2]
         border rounded-[20px]
-        p-8 md:p-6
-        shadow-[0_8px_32px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.3)]
-        ${hover ? "hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.3)] hover:border-accent-primary/35 transition-all duration-300" : ""}
+        p-7
+        shadow-[0_12px_48px_rgba(0,0,0,0.12),0_4px_12px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.3)]
+        h-full
+        ${hover ? "hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(0,0,0,0.14),0_4px_12px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.3)] hover:border-accent-primary/35 transition-all duration-300" : ""}
         ${className}
       `}
     >

@@ -15,7 +15,7 @@ export function FadeUp({ children, className = "", delay = 0 }: FadeUpProps) {
   return (
     <div
       ref={ref}
-      className={className}
+      className={`h-full ${className}`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0)" : "translateY(24px)",

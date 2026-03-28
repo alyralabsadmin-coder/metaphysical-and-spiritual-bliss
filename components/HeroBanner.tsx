@@ -48,12 +48,11 @@ export function HeroBanner({
         </div>
       )}
 
-      {/* Overlay gradient */}
+      {/* Light overlay for text readability */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(90,107,122,0.4) 0%, rgba(90,107,122,0.65) 100%)",
+          background: "rgba(0,0,0,0.15)",
         }}
       />
 

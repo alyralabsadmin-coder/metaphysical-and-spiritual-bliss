@@ -33,7 +33,7 @@ function ReviewText({ text }: { text: string }) {
 
 function ReviewCard({ review }: { review: (typeof TESTIMONIALS)[number] }) {
   return (
-    <GlassCard light hover={false} className="text-center h-full flex flex-col justify-between">
+    <GlassCard light hover={false} className="text-center h-full flex flex-col justify-between !shadow-none">
       <div>
         <div className="flex justify-center gap-1 mb-3">
           {[...Array(5)].map((_, i) => (
