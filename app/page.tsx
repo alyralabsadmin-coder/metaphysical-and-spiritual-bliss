@@ -74,7 +74,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {FEATURE_CARDS.map((card, i) => (
             <FadeUp key={card.title} delay={i * 80}>
-              <GlassCard light className="text-center">
+              <GlassCard light className="text-center flex flex-col">
                 {card.imageSrc ? (
                   <img
                     src={card.imageSrc}
@@ -91,7 +91,7 @@ export default function HomePage() {
                 <h3 className="font-heading font-medium text-[24px] tracking-[0.02em] text-text-heading">
                   {card.title}
                 </h3>
-                <p className="mt-3 text-text-body text-[15px] leading-[1.8]">
+                <p className="mt-3 text-text-body text-[15px] leading-[1.8] flex-1">
                   {card.description}
                 </p>
                 <div className="mt-6">

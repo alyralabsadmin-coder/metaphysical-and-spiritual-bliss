@@ -52,7 +52,7 @@ export function HeroBanner({
       <div
         className="absolute inset-0"
         style={{
-          background: "rgba(0,0,0,0.15)",
+          background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 100%)",
         }}
       />
 
